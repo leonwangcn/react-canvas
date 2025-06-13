@@ -5,10 +5,10 @@ import React from "react";
 function handelStyle(style: any) {
     style && Object.keys(style).forEach(key => {
         if ((key.toLowerCase().includes('height') || key.toLowerCase().includes('top')) && typeof style[key] === 'string' && style[key].endsWith('%')) {
-            style[key] = style[key].slice(0, -1) * canvasEl!.height / 100;
+            style[key] = Number(style[key].slice(0, -1)) * canvasEl!.height / 100;
         }
         if ((key.toLowerCase().includes('width') || key.toLowerCase().includes('left')) && typeof style[key] === 'string' && style[key].endsWith('%')) {
-            style[key] = style[key].slice(0, -1) * canvasEl!.width / 100;
+            style[key] = Number(style[key].slice(0, -1)) * canvasEl!.width / 100;
         }
     });
     return style;
@@ -50,53 +50,53 @@ const reconciler = ReactReconciler<string, any, Element, Element, Text, Element,
     commitTextUpdate(textInstance: Text, oldText: string, newText: string): void {
         textInstance.value = newText;
     },
-    createContainerChildSet(container: any): any {
-    },
+    // createContainerChildSet(container: any): any {
+    // },
     detachDeletedInstance(node: any): void {
     },
-    didNotFindHydratableContainerInstance(parentContainer: any, type: any, props: any): void {
-    },
-    didNotFindHydratableContainerSuspenseInstance(parentContainer: any): void {
-    },
-    didNotFindHydratableContainerTextInstance(parentContainer: any, text: string): void {
-    },
-    didNotFindHydratableInstance(parentType: any, parentProps: any, parentInstance: any, type: any, props: any): void {
-    },
-    didNotFindHydratableSuspenseInstance(parentType: any, parentProps: any, parentInstance: any): void {
-    },
-    didNotFindHydratableTextInstance(parentType: any, parentProps: any, parentInstance: any, text: string): void {
-    },
-    didNotHydrateContainerInstance(parentContainer: any, instance: any): void {
-    },
-    didNotHydrateInstance(parentType: any, parentProps: any, parentInstance: any, instance: any): void {
-    },
-    didNotMatchHydratedContainerTextInstance(parentContainer: any, textInstance: any, text: string): void {
-    },
-    didNotMatchHydratedTextInstance(parentType: any, parentProps: any, parentInstance: any, textInstance: any, text: string): void {
-    },
-    errorHydratingContainer(parentContainer: any): void {
-    },
-    finalizeContainerChildren(container: any, newChildren: any): void {
-    },
-    getFirstHydratableChild(parentInstance: any): any {
-    },
+    // didNotFindHydratableContainerInstance(parentContainer: any, type: any, props: any): void {
+    // },
+    // didNotFindHydratableContainerSuspenseInstance(parentContainer: any): void {
+    // },
+    // didNotFindHydratableContainerTextInstance(parentContainer: any, text: string): void {
+    // },
+    // didNotFindHydratableInstance(parentType: any, parentProps: any, parentInstance: any, type: any, props: any): void {
+    // },
+    // didNotFindHydratableSuspenseInstance(parentType: any, parentProps: any, parentInstance: any): void {
+    // },
+    // didNotFindHydratableTextInstance(parentType: any, parentProps: any, parentInstance: any, text: string): void {
+    // },
+    // didNotHydrateContainerInstance(parentContainer: any, instance: any): void {
+    // },
+    // didNotHydrateInstance(parentType: any, parentProps: any, parentInstance: any, instance: any): void {
+    // },
+    // didNotMatchHydratedContainerTextInstance(parentContainer: any, textInstance: any, text: string): void {
+    // },
+    // didNotMatchHydratedTextInstance(parentType: any, parentProps: any, parentInstance: any, textInstance: any, text: string): void {
+    // },
+    // errorHydratingContainer(parentContainer: any): void {
+    // },
+    // finalizeContainerChildren(container: any, newChildren: any): void {
+    // },
+    // getFirstHydratableChild(parentInstance: any): any {
+    // },
     getInstanceFromScope(scopeInstance: any): any {
     },
-    getNextHydratableInstanceAfterSuspenseInstance(suspenseInstance: any): any {
-    },
-    getNextHydratableSibling(instance: any): any {
-    },
-    getParentSuspenseInstance(targetInstance: any): any {
-    },
-    hideInstance(instance: any): void {
-    },
-    hideTextInstance(textInstance: any): void {
-    },
-    hydrateInstance(instance: any, type: any, props: any, rootContainerInstance: any, hostContext: any, internalInstanceHandle: any): any[] | null {
-        return null;
-    },
-    hydrateSuspenseInstance(suspenseInstance: any, internalInstanceHandle: any): void {
-    },
+    // getNextHydratableInstanceAfterSuspenseInstance(suspenseInstance: any): any {
+    // },
+    // getNextHydratableSibling(instance: any): any {
+    // },
+    // getParentSuspenseInstance(targetInstance: any): any {
+    // },
+    // hideInstance(instance: any): void {
+    // },
+    // hideTextInstance(textInstance: any): void {
+    // },
+    // hydrateInstance(instance: any, type: any, props: any, rootContainerInstance: any, hostContext: any, internalInstanceHandle: any): any[] | null {
+    //     return null;
+    // },
+    // hydrateSuspenseInstance(suspenseInstance: any, internalInstanceHandle: any): void {
+    // },
     hydrateTextInstance(textInstance: any, text: string, internalInstanceHandle: any): boolean {
         return false;
     },
@@ -110,20 +110,20 @@ const reconciler = ReactReconciler<string, any, Element, Element, Text, Element,
     noTimeout: undefined,
     preparePortalMount(containerInfo: any): void {
     },
-    registerSuspenseInstanceRetry(instance: any, callback: () => void): void {
-    },
-    replaceContainerChildren(container: any, newChildren: any): void {
-    },
-    resetTextContent(instance: any): void {
-    },
+    // registerSuspenseInstanceRetry(instance: any, callback: () => void): void {
+    // },
+    // replaceContainerChildren(container: any, newChildren: any): void {
+    // },
+    // resetTextContent(instance: any): void {
+    // },
     scheduleTimeout(fn: (...args: unknown[]) => unknown, delay: number | undefined): any {
     },
     supportsHydration: false,
     supportsPersistence: false,
-    unhideInstance(instance: any, props: any): void {
-    },
-    unhideTextInstance(textInstance: any, text: string): void {
-    },
+    // unhideInstance(instance: any, props: any): void {
+    // },
+    // unhideTextInstance(textInstance: any, text: string): void {
+    // },
     afterActiveInstanceBlur(): void {
     },
     beforeActiveInstanceBlur(): void {
